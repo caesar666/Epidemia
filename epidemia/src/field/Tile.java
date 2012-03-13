@@ -13,6 +13,7 @@ public class Tile
 	
 	public BufferedImage image;
 	private boolean free = false;
+	private boolean upFree = true;
 	private Position position;
 	private Position pixelPos;
 	
@@ -27,11 +28,13 @@ public class Tile
 		{
 			img = "floor";
 			free = false;
+			upFree = false;
 		}
 		else
 		{
 			img = "grass";
 			free = true;
+			upFree = true;
 		}
 		
 		this.image = ImageStore.getImage(img);
@@ -71,5 +74,15 @@ public class Tile
 	public void setPixelPos(Position pixelPos)
 	{
 		this.pixelPos = pixelPos;
+	}
+
+	public boolean isUpFree()
+	{
+		return upFree;
+	}
+
+	public void setUpFree(boolean upFree)
+	{
+		this.upFree = upFree;
 	}
 }

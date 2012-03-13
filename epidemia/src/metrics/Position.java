@@ -65,4 +65,9 @@ public class Position
 
 		return x == this.getX() && y == this.getY();
 	}
+	
+	public Position getNewPosition()
+	{
+		return new Position(x, y);
+	}
 }

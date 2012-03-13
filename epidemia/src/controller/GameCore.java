@@ -19,7 +19,11 @@ public class GameCore implements Runnable
 		{
 			try
 			{
+				long inicio = System.currentTimeMillis();
 				mainLoop();
+				long fim = System.currentTimeMillis() - inicio;
+				if (fim > 50)
+					System.out.println(fim);
 			}
 			catch (Exception e)
 			{

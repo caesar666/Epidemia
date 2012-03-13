@@ -16,7 +16,7 @@ public class MainWindow extends JFrame
 
 	public MainWindow()
 	{
-		super("Survive 1.0 SNAPSHOT");
+		super("Survive 1.0 - SNAPSHOT");
 		this.addKeyListener(new Keyboard());
 		this.addMouseListener(new Mouse());
 	}

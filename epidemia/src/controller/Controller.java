@@ -1,11 +1,14 @@
 package controller;
 
 import java.awt.Graphics;
+import java.util.ArrayList;
+import java.util.List;
 
 import metrics.Position;
 import people.Humanoid;
 import people.PlayerCharacter;
 import people.npc.Zombie;
+import controller.firegun.ShotLine;
 import controller.move.Move;
 import controller.move.MoveNPC;
 import field.FieldView;
@@ -16,11 +19,10 @@ public class Controller
 {
 	private static int time;
 	
-	public static Position shot;
-
 	public static PlayerCharacter player;
 	public static Zombie zombieTest;
-
+	public static List<AutoRender> toRenderList = new ArrayList<AutoRender>();
+	
 	public static void load()
 	{
 		player = new PlayerCharacter();
@@ -99,6 +101,18 @@ public class Controller
 	
 	public static void shot(Position target)
 	{
-		shot = target;
+		ShotLine shotLine = new ShotLine();
+		
+		Position playerPos = FieldView.getInstance().mapTiles.get(
+				PlayerCharacter.playerPos.getKey()).getPixelPos().getNewPosition();
+		
+		
+		playerPos.add('x', Tile.size / 2);
+		playerPos.add('y', Tile.size / 2);
+		
+		shotLine.calculeShot(playerPos, target);
+		Controller.toRenderList.add(shotLine);
 	}
+	
+	
 }

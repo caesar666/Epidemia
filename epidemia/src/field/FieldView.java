@@ -72,7 +72,7 @@ public class FieldView
 		}
 
 		// Console
-//		drawConsole(g);
+		// drawConsole(g);
 
 		g.drawString(Controller.player.getPixelPos().toString(), 0, 60);
 	}
@@ -100,6 +100,20 @@ public class FieldView
 
 		int mapTam = this.getLines().get(0).getTam() * Tile.size;
 		return fieldView.position.getX() + mapTam >= mapTam - Tile.size;
+	}
+
+	public Tile getTileForPixel(Position pos)
+	{
+		int x = pos.getX();
+		int y = pos.getY();
+		
+		int difx = Math.abs(x - this.getPosition().getX());
+		int dify = Math.abs(y - this.getPosition().getY());
+		
+		x = difx / Tile.size;
+		y = dify / Tile.size;
+		
+		return FieldView.getInstance().getLines().get(y).getTiles().get(x);
 	}
 
 	public List<FieldLine> getLines()
