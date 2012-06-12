@@ -200,7 +200,7 @@ class PositionB extends Position
 
 class RouteComparator implements Comparator<DefaultMutableTreeNode>
 {
-	@Override
+	
 	public int compare(DefaultMutableTreeNode d1, DefaultMutableTreeNode d2)
 	{
 		Float w1 = new Float(Motion.getPositionFromNode(d1).getWeight());

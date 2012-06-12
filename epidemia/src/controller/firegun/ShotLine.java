@@ -191,7 +191,7 @@ public class ShotLine implements AutoRender
 		return FieldView.getInstance().getTileForPixel(p).isUpFree();
 	}
 
-	@Override
+	
 	public void render(Graphics g)
 	{
 		g.setColor(lineColor);

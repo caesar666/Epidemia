@@ -15,14 +15,14 @@ public class Keyboard implements KeyListener
 	int directionPressed = 0;
 	Move move;
 
-	@Override
+	
 	public void keyPressed(KeyEvent key)
 	{
 		Character keyChar = Character.toLowerCase(key.getKeyChar());
 		pressed(keyChar);
 	}
 
-	@Override
+	
 	public void keyReleased(KeyEvent key)
 	{
 		Character keyChar = Character.toLowerCase(key.getKeyChar());
@@ -60,7 +60,7 @@ public class Keyboard implements KeyListener
 
 	}
 
-	@Override
+	
 	public void keyTyped(KeyEvent arg0)
 	{
 	}

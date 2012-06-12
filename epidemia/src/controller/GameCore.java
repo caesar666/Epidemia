@@ -84,7 +84,7 @@ public class GameCore implements Runnable
 		return dif;
 	}
 
-	@Override
+	
 	public void run()
 	{
 		GameCore.gamePanel = MainWindow.panel;
